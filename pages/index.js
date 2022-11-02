@@ -12,18 +12,18 @@ const Home = ({ products, bannerData }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head> */}
 
-      <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
+      {/* <HeroBanner heroBanner={bannerData.length && bannerData[0]} /> */}
 
-      <div className='products-heading'>
-        <h2>Best Selling Products</h2>
-        <p>Speakers of many variations</p>
+      <div className='text-center'>
+        <h2 className='font-semibold'>Latest Arrivals</h2>
+        <p className='text-sm'>Speakers of many variations</p>
       </div>
 
-      <div className='products-container'>
+      <div className='flex flex-wrap justify-center mt-5 w-full space-x-3'>
         {products?.map((product) => <Product key={product._id} product={product} />)}
       </div>
 
-      <FooterBanner footerBanner={bannerData && bannerData[0]} />
+      {/* <FooterBanner footerBanner={bannerData && bannerData[0]} /> */}
     </>
   )
 }

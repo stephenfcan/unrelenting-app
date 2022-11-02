@@ -16,18 +16,18 @@ const ProductDetails = ({ product, products }) => {
 
   return (
     <div>
-      <div className='product-detail-container'>
+      <div className='md:flex justify-center space-x-[40px] m-[40px] mt-[60px] space-y-5 md:space-y-0'>
         <div>
           {/* Product Image */}
           <div className='image-container'>
-            <img src={urlFor(image && image[index])} alt="" className='product-detail-image' />
+            <img src={urlFor(image && image[index])} alt="" className='bg-gray-200 w-[300px] h-[300px] md:w-[400px] md:h-[400px] cursor-pointer transition ease-in-out' />
           </div>
-          <div className='small-images-container'>
+          <div className='flex mt-[20px] space-x-2'>
             {image?.map((item, i) => (
               <img
                 key={i}
                 src={urlFor(item)}
-                className={i === index ? 'small-image selected-image' : 'small-image'}
+                className={i === index ? 'w-[70px] h-[70px] cursor-pointer bg-gray-300' : 'w-[70px] h-[70px] cursor-pointer bg-gray-200'}
                 onMouseEnter={() => setIndex(i)}
               />
             ))}
@@ -35,12 +35,12 @@ const ProductDetails = ({ product, products }) => {
         </div>
 
         {/* Product Details */}
-        <div className='product-detail-desc'>
-          <h1>{name}</h1>
+        <div className=''>
+          <h1 className='font-semibold mb-2'>{name}</h1>
 
           {/* Reviews */}
-          <div className='reviews'>
-            <div>
+          <div className='flex space-x-[5px] items-center mb-5'>
+            <div className='flex'>
               <AiFillStar />
               <AiFillStar />
               <AiFillStar />
@@ -50,40 +50,43 @@ const ProductDetails = ({ product, products }) => {
             <p>(20)</p>
           </div>
 
-          {/* Details */}
-          <h4>Details:</h4>
-          <p>{details}</p>
-          <p className='price'>${price}</p>
+          {/* Description */}
+          <div className='pb-3'>
+            <h4 className='font-semibold'>Description:</h4>
+            <p className='text-xs'>{details}</p>
+          </div>
+          
+          <p className='font-semibold pt-5'>${price} USD</p>
           
           {/* Quantity */}
-          <div className='quantity'>
-            <h3>Quantity</h3>
-            <p className='quantity-desc'>
-              <span className='minus' onClick={decQty}><AiOutlineMinus /></span>
-              <span className='num'>{qty}</span>
-              <span className='plus' onClick={incQty}><AiOutlinePlus /></span>
+          <div className='flex space-x-[20px] items-center pb-5'>
+            <h3>Quantity:</h3>
+            <p className='flex p-[6px] items-center space-x-5'>
+              <span className='hover:shadow-lg cursor-pointer border border-black p-1' onClick={decQty}><AiOutlineMinus /></span>
+              <span className=''>{qty}</span>
+              <span className='hover:shadow-lg cursor-pointer border border-black p-1' onClick={incQty}><AiOutlinePlus /></span>
             </p>
           </div>
 
           {/* Buttons */}
-          <div className='buttons'>
+          <div className='md:inline-flex md:space-x-[15px] space-y-3 md:space-y-0'>
             <button
               type='button'
-              className='add-to-cart'
+              className='hover:shadow-lg font-semibold w-[200px] px-[5px] py-[12px] border border-black'
               onClick={() => onAdd(product, qty)}
             >
               Add to Cart
             </button>
-            <button type='button' className='buy-now' onClick={handleBuyNow}>Buy Now</button>
+            <button type='button' className='hover:shadow-lg font-semibold w-[200px] px-[5px] py-[13px] bg-black text-white' onClick={handleBuyNow}>Buy Now</button>
           </div>
         </div>
       </div>
     
       {/* Similar Products */}
-      <div className='maylike-products-wrapper'>
-        <h2>You may also like</h2>
+      <div className='m-[50px] text-center'>
+        <h2 className='font-semibold'>You may also like</h2>
         <div className='marquee'>
-          <div className='maylike-products-container'>
+          <div className='flex justify-center space-x-3 mt-5'>
             {products.map((item) => (
                 <Product key={item._id} product={item} />
             ))}
