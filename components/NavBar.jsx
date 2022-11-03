@@ -13,7 +13,12 @@ const NavBar = () => {
       
       <div className='flex space-x-5 items-center'>
         <p className='font-bold text-xl cursor-pointer'>
-          <Link href='/'>UNRELENTING</Link>
+          <Link href='/'>
+            <div className='flex items-center space-x-2'>
+              <img className='hidden md:inline-flex h-5' src="/logo.png" alt="" />
+              <p>UNRELENTING</p>
+            </div>
+          </Link>
         </p>
         <div className='hidden md:inline-flex text-xs space-x-5 text-gray-500'>
           <p className='cursor-pointer hover:text-black'>
