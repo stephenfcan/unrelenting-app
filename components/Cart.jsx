@@ -41,7 +41,7 @@ const Cart = () => {
           <div className='flex flex-col empty-cart text-center items-center justify-center m-[40px]'>
             <AiOutlineShopping size={150} />
             <h3 className='text-sm font-semibold mb-10'>Your shopping bag is empty</h3>
-            <Link href='/'>
+            <Link href='/shop'>
               <button
                 type='button'
                 onClick={() => setShowCart(false)}
@@ -54,7 +54,7 @@ const Cart = () => {
         )}
 
         {/* Items in Cart */}
-        <div className='product-container'>
+        <div className='mt-[15px] overflow-auto max-h-[70vh]'>
           {cartItems.length >= 1 && cartItems.map((item, index) => (
             <div className='product flex space-x-[30px] p-[20px]' key={item._id}>
               <img src={urlFor(item?.image[0])} alt="" className='cart-product-image w-[150px] h-[150px] bg-gray-200' />

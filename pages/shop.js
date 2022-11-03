@@ -1,29 +1,18 @@
 import React from 'react'
-import Head from 'next/head'
-import { Product, FooterBanner, HeroBanner } from '../components'
+import { Product } from '../components'
 import { client } from '../lib/client'
 
-const Home = ({ products, bannerData }) => {
+const Shop = ({ products }) => {
   return (
     <>
-      {/* <Head>
-        <title>UNRELENTING</title>
-        <meta name='description' content='UNRELENTING Apparel' />
-        <link rel="icon" href="/favicon.ico" />
-      </Head> */}
-
-      {/* <HeroBanner heroBanner={bannerData.length && bannerData[0]} /> */}
-
       <div className='text-center'>
-        <h2 className='font-semibold'>Latest Arrivals</h2>
-        <p className='text-sm'>Fresh off the press</p>
+        <h2 className='font-semibold'>All Products</h2>
+        <p className='text-sm'>Made for the grind</p>
       </div>
 
       <div className='flex flex-wrap justify-center mt-5 w-full space-x-3 mb-10'>
         {products?.map((product) => <Product key={product._id} product={product} />)}
       </div>
-
-      {/* <FooterBanner footerBanner={bannerData && bannerData[0]} /> */}
     </>
   )
 }
@@ -40,4 +29,4 @@ export const getServerSideProps = async () => {
   }
 }
 
-export default Home
+export default Shop

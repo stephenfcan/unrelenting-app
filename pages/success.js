@@ -17,15 +17,15 @@ const Success = () => {
 
   return (
     <div className='success-wrapper'>
-      <div className='success'>
+      <div className='success flex flex-col min-h-[60vh] justify-center items-center m-auto'>
         <p className='icon'>
-          <BsBagCheckFill />
+          <BsBagCheckFill size={40} />
         </p>
-        <h2>Thank you for your order!</h2>
-        <p className='email-msg'>Check your email for the receipt.</p>
-        <p className='description'>If you have any questions, please email <a className='email' href="mailto:stephenfcan@gmail.com">stephenfcan@gmail.com</a></p>
-        <Link href='/'>
-          <button type='button' width='300px' className='btn'>Continue Shopping</button>
+        <h2 className='font-semibold text-sm mt-1'>Thank you for your order!</h2>
+        <p className='email-msg text-xs mb-3'>Check your email for the receipt.</p>
+        <p className='description text-xs mb-10'>If you have any questions, please email <a className='email' href="mailto:stephenfcan@gmail.com">stephenfcan@gmail.com</a></p>
+        <Link href='/shop'>
+          <button type='button' width='300px' className='btn hover:shadow-lg font-semibold w-3/12 px-[5px] py-[13px] bg-black text-white'>Continue Shopping</button>
         </Link>
       </div>
     </div>
