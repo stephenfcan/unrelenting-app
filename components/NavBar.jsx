@@ -8,9 +8,6 @@ const NavBar = () => {
   const { showCart, setShowCart, totalQuantities } = useStateContext();
   return (
     <div className='flex justify-between max-w-7xl mx-auto py-4 px-7 items-center'>
-      
-      
-      
       <div className='flex space-x-5 items-center'>
         <div className='font-bold text-xl cursor-pointer'>
           <Link href='/'>

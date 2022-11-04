@@ -1,6 +1,6 @@
 export default {
     name: 'product',
-    title: 'Product',
+    title: 'Products',
     type: 'document',
     fields: [
         {
@@ -39,6 +39,11 @@ export default {
         {
             name: 'availability',
             title: 'Availability',
+            type: 'boolean',
+        },
+        {
+            name: 'new',
+            title: 'New Product',
             type: 'boolean',
         },
     ]

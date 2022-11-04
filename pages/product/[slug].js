@@ -6,7 +6,7 @@ import { useStateContext } from '../../context/StateContext'
 
 const ProductDetails = ({ product, products }) => {
 
-  const { image, name, details, price } = product;
+  const { image, name, details, price, availability } = product;
   const [index, setIndex] = useState(0);
   const { incQty, decQty, qty, onAdd, setShowCart } = useStateContext();
   const handleBuyNow = () => {
@@ -58,27 +58,31 @@ const ProductDetails = ({ product, products }) => {
           
           <p className='font-semibold pt-5'>${price} USD</p>
           
-          {/* Quantity */}
-          <div className='flex space-x-[20px] items-center pb-5'>
-            <h3>Quantity:</h3>
-            <p className='flex p-[6px] items-center space-x-5'>
-              <span className='hover:shadow-lg cursor-pointer border border-black p-1' onClick={decQty}><AiOutlineMinus /></span>
-              <span className=''>{qty}</span>
-              <span className='hover:shadow-lg cursor-pointer border border-black p-1' onClick={incQty}><AiOutlinePlus /></span>
-            </p>
-          </div>
+          {availability ? (
+            <>
+              {/* Quantity */}
+              <div className='flex space-x-[20px] items-center pb-5'>
+                <h3>Quantity:</h3>
+                <p className='flex p-[6px] items-center space-x-5'>
+                  <span className='hover:shadow-lg cursor-pointer border border-black p-1' onClick={decQty}><AiOutlineMinus /></span>
+                  <span className=''>{qty}</span>
+                  <span className='hover:shadow-lg cursor-pointer border border-black p-1' onClick={incQty}><AiOutlinePlus /></span>
+                </p>
+              </div>
 
-          {/* Buttons */}
-          <div className='md:inline-flex md:space-x-[15px] space-y-3 md:space-y-0'>
-            <button
-              type='button'
-              className='hover:shadow-lg font-semibold w-[200px] px-[5px] py-[12px] border border-black'
-              onClick={() => onAdd(product, qty)}
-            >
-              Add to Cart
-            </button>
-            <button type='button' className='hover:shadow-lg font-semibold w-[200px] px-[5px] py-[13px] bg-black text-white' onClick={handleBuyNow}>Buy Now</button>
-          </div>
+              {/* Buttons */}
+              <div className='md:inline-flex md:space-x-[15px] space-y-3 md:space-y-0'>
+                <button
+                  type='button'
+                  className='hover:shadow-lg font-semibold w-[200px] px-[5px] py-[12px] border border-black'
+                  onClick={() => onAdd(product, qty)}
+                >
+                  Add to Cart
+                </button>
+                <button type='button' className='hover:shadow-lg font-semibold w-[200px] px-[5px] py-[13px] bg-black text-white' onClick={handleBuyNow}>Buy Now</button>
+              </div>
+            </>      
+          ) : (<h1>Out of Stock</h1>)}
         </div>
       </div>
     

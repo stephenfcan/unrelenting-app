@@ -14,11 +14,11 @@ const Layout = ({ children }) => {
         <NavBar />
       </header>
 
-      <main className='main-container'>
+      <main className='main-container mt-5'>
         {children}
       </main>
 
-      <footer className='mt-auto bottom-0'>
+      <footer className='mt-auto bottom-0 pt-10'>
         <Footer />
       </footer>
     </div>
