@@ -5,7 +5,7 @@ import { client } from '../lib/client'
 const Shop = ({ products }) => {
   return (
     <>
-      <div className='text-center'>
+      <div className='text-center mt-5'>
         <h2 className='font-semibold'>All Products</h2>
         <p className='text-sm'>Made for the grind</p>
       </div>

@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 const Home = ({ products, bannerData }) => {
   const router = useRouter();
   return (
-    <main className='space-y-10'>
+    <main className='space-y-14 mt-5'>
       {/* <Head>
         <title>UNRELENTING</title>
         <meta name='description' content='UNRELENTING Apparel' />
@@ -15,7 +15,7 @@ const Home = ({ products, bannerData }) => {
       </Head> */}
 
       {/* Top Banner */}
-      {/* <HeroBanner heroBanner={bannerData.length && bannerData[0]} /> */}
+      <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
 
       {/* Latest Products */}
       <div>

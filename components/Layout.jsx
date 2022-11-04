@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
         <NavBar />
       </header>
 
-      <main className='main-container mt-5'>
+      <main className='main-container'>
         {children}
       </main>
 
