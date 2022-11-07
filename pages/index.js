@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 const Home = ({ products, bannerData }) => {
   const router = useRouter();
   return (
-    <main className='space-y-14 mt-5'>
+    <main className='space-y-14 md:mt-5'>
       {/* <Head>
         <title>UNRELENTING</title>
         <meta name='description' content='UNRELENTING Apparel' />
@@ -29,7 +29,7 @@ const Home = ({ products, bannerData }) => {
       </div>
 
       {/* Bottom Banner */}
-      <div className='flex flex-col items-center w-5/6 mx-auto bg-black py-9 space-y-4'>
+      <div className='flex flex-col items-center w-full md:w-5/6 mx-auto bg-black py-9 space-y-4'>
         <div className='text-white text-center'>
           <h1 className='font-semibold'>The UNRELENTING Story</h1>
           <p className='text-sm mx-5'>Creating products designed to tackle your biggest ambitions</p>

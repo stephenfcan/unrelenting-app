@@ -9,7 +9,7 @@ const HeroBanner = ({ heroBanner }) => {
         {/* <p className='beats-solo'>{heroBanner.smallText}</p> */}
         <h3>{heroBanner.midText}</h3>
         {/* <h1 className='z-10 absolute mt-[250px] ml-[435px] text-white font-semibold'>{heroBanner.largeText1}</h1> */}
-        <img src={urlFor(heroBanner.image)} alt="" className='z-0 relative hero-banner-image px-10 w-[1060px] md:h-[450px]' />
+        <img src={urlFor(heroBanner.image)} alt="" className='z-0 relative hero-banner-image md:px-10 w-screen md:w-[1060px] md:h-[450px]' />
 
         <div>
           <Link href={`/product/${heroBanner.product}`}>
