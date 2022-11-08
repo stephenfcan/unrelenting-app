@@ -21,7 +21,7 @@ const Home = ({ products, bannerData }) => {
       <div>
         <div className='text-center'>
           <h2 className='font-semibold'>Latest Arrivals</h2>
-          <p className='text-sm'>Fresh off the press</p>
+          <p className='text-sm'>Fresh out the factory</p>
         </div>  
         <div className='flex flex-wrap justify-center mt-4 w-full md:space-x-3 mb-10'>
           {products?.map((product) => <Product key={product._id} product={product} />)}
@@ -42,7 +42,7 @@ const Home = ({ products, bannerData }) => {
 }
 
 export const getServerSideProps = async () => {
-  const query = '*[_type == "product" && new == true]';
+  const query = '*[_type == "product" && new == true][0...4]';
   const products = await client.fetch(query);
 
   const bannerQuery = '*[_type == "banner"]';

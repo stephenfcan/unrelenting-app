@@ -16,11 +16,11 @@ const ProductDetails = ({ product, products }) => {
 
   return (
     <div>
-      <div className='md:flex justify-center space-x-[40px] m-[40px] mt-[60px] space-y-5 md:space-y-0'>
+      <div className='flex flex-col md:flex-row justify-center items-center md:items-start space-x-[40px] md:mx-[20px] mt-5 md:m-[40px] md:mt-[60px] space-y-5 md:space-y-0'>
         <div>
           {/* Product Image */}
           <div className='image-container'>
-            <img src={urlFor(image && image[index])} alt="" className='bg-gray-200 w-[300px] h-[300px] md:w-[400px] md:h-[400px] cursor-pointer transition ease-in-out' />
+            <img src={urlFor(image && image[index])} alt="" className='object-contain bg-gray-200 w-[300px] h-[300px] md:w-[400px] md:h-[400px] cursor-pointer transition ease-in-out' />
           </div>
           <div className='flex mt-[20px] space-x-2'>
             {image?.map((item, i) => (
@@ -87,7 +87,7 @@ const ProductDetails = ({ product, products }) => {
       </div>
     
       {/* Similar Products */}
-      <div className='m-[50px] text-center'>
+      <div className='my-[50px] mx-[5px] md:mx-[50px] text-center'>
         <h2 className='font-semibold'>You may also like</h2>
         <div className='marquee'>
           <div className='flex justify-center space-x-3 mt-5'>
@@ -127,7 +127,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
   const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
   
   // query for similar products
-  const productsQuery = '*[_type == "product"]'
+  const productsQuery = '*[_type == "product"][0...4]'
 
   const product = await client.fetch(query);
   const products = await client.fetch(productsQuery);

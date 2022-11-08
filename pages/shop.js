@@ -10,7 +10,7 @@ const Shop = ({ products }) => {
         <p className='text-sm'>Made for the grind</p>
       </div>
 
-      <div className='flex flex-wrap justify-center mt-5 w-full space-x-3 mb-10'>
+      <div className='flex flex-wrap justify-center mt-5 w-full md:space-x-3 mb-10'>
         {products?.map((product) => <Product key={product._id} product={product} />)}
       </div>
     </>
