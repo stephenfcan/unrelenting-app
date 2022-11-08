@@ -4,6 +4,10 @@ import { toast } from 'react-hot-toast';
 const Context = createContext();
 
 export const StateContext = ({ children }) => {
+  // Hamburger Menu
+  const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
+
+  // Cart
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -83,6 +87,8 @@ export const StateContext = ({ children }) => {
   return (
     <Context.Provider
       value={{
+        showHamburgerMenu,
+        setShowHamburgerMenu,
         showCart,
         setShowCart,
         cartItems,
