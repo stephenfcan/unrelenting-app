@@ -23,6 +23,11 @@ export default {
             },
         },
         {
+            name: 'description',
+            title: 'Short Description',
+            type: 'string',
+        },
+        {
             name: 'details',
             title: 'Details',
             type: 'string',
