@@ -3,6 +3,7 @@ import { urlFor, client } from '../../lib/client'
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { Product } from '../../components';
 import { useStateContext } from '../../context/StateContext'
+import Link from 'next/link';
 
 const ProductDetails = ({ product, products }) => {
 
@@ -80,6 +81,16 @@ const ProductDetails = ({ product, products }) => {
                   Add to Cart
                 </button>
                 <button type='button' className='hover:shadow-lg font-semibold w-[200px] px-[5px] py-[13px] bg-black text-white' onClick={handleBuyNow}>Buy Now</button>
+              </div>
+
+              {/* Extra Links */}
+              <div className='flex flex-col items-start mt-5 space-y-1'>
+                <Link href='/sizing-chart'>
+                  <button className='text-xs underline hover:text-gray-600'>Sizing Chart</button>
+                </Link>
+                <Link href='/guarantee'>
+                  <button className='text-xs underline hover:text-gray-600'>UNRELENTING Guarantee</button>
+                </Link>
               </div>
             </>      
           ) : (<h1>Out of Stock</h1>)}

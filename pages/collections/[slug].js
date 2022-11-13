@@ -11,7 +11,7 @@ const CollectionDetails = ({ collection }) => {
 
   return (
     <div>
-      <div className='flex flex-col justify-center items-center space-x-[40px] md:mx-[20px] space-y-5 md:space-y-0'>
+      <div className='flex flex-col justify-center items-center md:mx-[20px] space-y-5 md:space-y-0'>
         <div className='mb-1 md:mb-7'>
           {/* Collection Banner */}
           <div className='flex flex-col items-center justify-center'>
