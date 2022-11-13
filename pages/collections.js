@@ -18,7 +18,7 @@ const Collections = ({ collections }) => {
 }
 
 export const getServerSideProps = async () => {
-  const query = '*[_type == "collection"]';
+  const query = '*[_type == "collection" && availability == true]';
   const collections = await client.fetch(query);
 
   return {
