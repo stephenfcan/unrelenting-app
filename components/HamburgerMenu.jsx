@@ -22,6 +22,9 @@ const HamburgerMenu = () => {
           <Link href='/about'>
             <button onClick={() => setShowHamburgerMenu(false)} className='text-gray-500 hover:text-black cursor-pointer mx-[10px] md:mx-[18px] text-xl font-semibold'>ABOUT</button>
           </Link>
+          <Link href='/customer-support'>
+            <button onClick={() => setShowHamburgerMenu(false)} className='text-gray-500 hover:text-black cursor-pointer mx-[10px] md:mx-[18px] text-xl font-semibold'>SUPPORT</button>
+          </Link>
         </div>
       </div>
     </div>
