@@ -28,8 +28,8 @@ const Cart = () => {
   }
 
   return (
-    <div className='cart-wrapper fixed w-screen right-0 top-0 z-100 transition ease-in-out bg-[#000000] bg-opacity-50' ref={cartRef} >
-      <div className='cart-container h-screen w-screen md:w-[600px] bg-white float-right px-[30px] py-[10px] relative'>
+    <div className='cart-wrapper fixed w-screen right-0 top-0 z-100 transition ease-in-out bg-black bg-opacity-50 backdrop-blur-sm' ref={cartRef} >
+      <div className='cart-container h-screen w-screen md:w-[600px] bg-white/80 float-right px-[30px] py-[10px] relative'>
         <button type='button' className='cart-heading flex items-center cursor-pointer space-x-2 m-[10px]' onClick={() => setShowCart(false)}>
           <AiOutlineLeft />
           <span className='heading font-semibold'>Your Cart</span>
