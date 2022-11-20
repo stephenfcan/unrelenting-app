@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
           <title>UNRELENTING</title>
         </Head>
 
-        <header className='sticky top-0 z-50 bg-white'>
+        <header className='sticky top-0 z-50'>
           <NavBar />
         </header>
 

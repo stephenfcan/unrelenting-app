@@ -66,9 +66,9 @@ const Cart = () => {
                 <div className='space-y-5'>
                   <div>
                     <p className='quantity-desc flex items-center space-x-3'>
-                      <span className='minus border border-black' onClick={() => toggleCartItemQuantity(item._id, 'dec')}><AiOutlineMinus /></span>
+                      <span className='minus cursor-pointer border border-black' onClick={() => toggleCartItemQuantity(item._id, 'dec')}><AiOutlineMinus /></span>
                       <span className='num' onClick=''>{item.quantity}</span>
-                      <span className='plus border border-black' onClick={() => toggleCartItemQuantity(item._id, 'inc')}><AiOutlinePlus /></span>
+                      <span className='plus cursor-pointer border border-black' onClick={() => toggleCartItemQuantity(item._id, 'inc')}><AiOutlinePlus /></span>
                     </p>
                   </div>
                   <button
@@ -77,7 +77,7 @@ const Cart = () => {
                     onClick={() => onRemove(item)}
                   >
                     Remove
-                    <TiDeleteOutline size={20} />
+                    {/* <TiDeleteOutline size={20} /> */}
                   </button>
                 </div>
               </div>

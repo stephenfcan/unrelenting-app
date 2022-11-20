@@ -8,7 +8,7 @@ const NavBar = () => {
   const { showHamburgerMenu, setShowHamburgerMenu, showCart, setShowCart, totalQuantities } = useStateContext();
 
   return (
-    <div className='flex justify-between max-w-7xl mx-auto py-4 px-3 md:px-7 items-center'>
+    <div className={`flex justify-between max-w-7xl mx-auto py-4 px-3 md:px-7 items-center ${showCart ? ('bg-white') : ('bg-white/70 backdrop-blur-sm')}`}>
       <div className='flex md:space-x-5 items-center'>
         {/* Hamburger Menu */}
         <button type='button' className='flex md:hidden' onClick={() => setShowHamburgerMenu(!showHamburgerMenu)}>
